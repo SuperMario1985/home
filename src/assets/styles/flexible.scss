@@ -1,0 +1,29 @@
+@function px2rem($px) {
+  $rem: 16px;
+
+  @return ($px/$rem)+em;
+}
+
+@mixin flex($justify: flex-start, $align: center, $direction: row, $wrap: nowrap) {
+  display: flex;
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+.flex-center {
+  @include flex($justify:center);
+}
+
+.flex-start {
+  @include flex();
+}
+
+.flex-between {
+  @include flex($justify:space-between);
+}
+
+.flex-around {
+  @include flex($justify:space-around);
+}

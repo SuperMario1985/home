@@ -1,0 +1,32 @@
+@use "../themeColor.scss"as *;
+$--colors: ("primary": ("base": $themeColor,
+  ),
+  "success": ("base": #21ba45,
+  ),
+  "warning": ("base": #f2711c,
+  ),
+  "danger": ("base": #db2828,
+  ),
+  "error": ("base": #db2828,
+  ),
+  "info": ("base": #42b8dd,
+  ),
+);
+
+// we can add this to custom namespace, default is 'el'
+// @forward "element-plus/theme-chalk/src/mixins/config.scss"with ($namespace: "csc"
+// );
+
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+// do not use same name, it will override.
+// @forward "element-plus/theme-chalk/src/common/var.scss"with ($colors: $--colors,
+//   $button-padding-horizontal: ("default": 20px),
+//   $pagination:('font-size': 13px,
+//     'border-radius': 4px,
+//     'button-width': 28px,
+//     'button-height': 28px,
+//     'font-size-small': 12px,
+//     'button-width-small': 24px,
+//     'button-height-small': 24px,
+//     'item-gap': 16px, ));

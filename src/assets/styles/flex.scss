@@ -1,0 +1,82 @@
+
+// flex 基础混入：x轴左对齐，y轴顶部对齐
+@mixin flex($jc: flex-start, $ai: flex-start, $fd: row, $fw: nowrap) {
+  display: flex;
+  flex-wrap: $fw;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
+// flex 混入：x轴左对齐，y轴上下居中
+@mixin flex-s($ai: center, $fd: row) {
+  @include flex(flex-start, $ai, $fd);
+}
+
+// flex 混入：x轴右对齐，y轴上下居中
+@mixin flex-e($ai: center, $fd: row) {
+  @include flex(flex-end, $ai, $fd);
+}
+
+// flex 混入：x轴居中对齐，y轴上下居中
+@mixin flex-c($ai: center, $fd: row) {
+  @include flex(center, $ai, $fd);
+}
+
+// flex 混入：x轴两端对齐，y轴上下居中
+@mixin flex-a($ai: center, $fd: row) {
+  @include flex(space-around, $ai, $fd);
+}
+
+// flex 混入：x轴间隔相等，y轴上下居中
+@mixin flex-b($ai: center, $fd: row) {
+  @include flex(space-between, $ai, $fd);
+}
+
+// flex 类：x轴左对齐，y轴顶部对齐
+.flex {
+  @include flex;
+}
+
+// flex 类：x轴左对齐，y轴上下居中
+.flex-s {
+  @include flex-s;
+}
+
+// flex 类：x轴左对齐，y轴baseline对齐
+.flex-s-b {
+  @include flex-s(baseline);
+}
+
+// flex 类：x轴左对齐，y轴顶部对齐
+.flex-s-s {
+  @include flex-s(flex-start);
+}
+
+// flex 类：x轴右对齐，y轴上下居中
+.flex-e {
+  @include flex-e;
+}
+
+// flex 类：x轴居中对齐，y轴上下居中
+.flex-c {
+  @include flex-c;
+}
+
+// flex 类：x轴两端对齐，y轴上下居中
+.flex-a {
+  @include flex-a;
+}
+
+// flex 类：x轴间隔相等，y轴上下居中
+.flex-b {
+  @include flex-b;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-none {
+  flex: none;
+}
